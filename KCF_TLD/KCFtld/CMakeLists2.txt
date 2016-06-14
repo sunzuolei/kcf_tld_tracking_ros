@@ -1,0 +1,40 @@
+# Open The CMake GUI
+# specify the source directory and the binary directory
+# press configure.
+#
+# UNIX Makefile:
+# 1) go to the binary folder and type "make" to build the project
+#
+# Microsoft Visual C++:
+# 1) open the .sln file
+# 2) build the project "ALL_BUILD" to build the opentld project
+
+
+project(CF_TLD)
+cmake_minimum_required(VERSION 2.6)
+
+# add c++11 support
+if(CMAKE_COMPILER_IS_GNUCC)
+    ADD_DEFINITIONS ( -std=c++11 )
+endif(CMAKE_COMPILER_IS_GNUCC)
+
+find_package(OpenCV REQUIRED)
+# OpenCV 3.0 does currently not include its' includes correctly
+include_directories(${OpenCV_DIR}/include)
+
+
+#build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING
+        "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+        FORCE)
+endif(NOT CMAKE_BUILD_TYPE)
+
+add_definitions(-fPIC)
+
+
+#-------------------------------------------------------------------------------
+#add subdirectories
+add_subdirectory(src/3rdparty/cf_tracking)
+add_subdirectory(src/libopentld)
+

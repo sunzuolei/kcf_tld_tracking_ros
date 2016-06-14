@@ -1,0 +1,1 @@
+./cftld sample_image_sequence.cfg

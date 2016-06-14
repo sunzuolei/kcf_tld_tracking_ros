@@ -1,0 +1,7 @@
+<!--
+  The kcf_tld node.   
+ -->
+<launch>
+    <include file="$(find freenect_launch)/launch/freenect.launch"/>
+    <node pkg="OpenTLD" type="opentld" name="opentld" respawn="true" launch-prefix="xterm -e"/>
+</launch>
