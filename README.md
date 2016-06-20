@@ -17,7 +17,7 @@ roslaunch KCF kcf.launch
 roslaunch KCFtld kcftld.launch
 roslaunch OpenTLD opentld.launch
 ```
-Thanks to [Klaus Haag]!(https://github.com/klahaag/CFtld)
+Thanks to [Klaus Haag](https://github.com/klahaag/CFtld)!
 ## Contributor
 -------------------
 - 张子洋: [zzy@mpig.com.cn](zzy@mpig.com.cn)
